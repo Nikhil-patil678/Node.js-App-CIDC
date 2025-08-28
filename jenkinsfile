@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         SERVER_IP      = '98.80.11.144'
-        SSH_CREDENTIAL =  'node-app-key'
+        SSH_CREDENTIAL = 'node-app-key-credentials'
         REPO_URL       = 'https://github.com/Nikhil-patil678/Node.js-App-CIDC.git'
         BRANCH         = 'main'
         REMOTE_USER    = 'ubuntu'
