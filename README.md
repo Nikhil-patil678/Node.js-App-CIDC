@@ -114,7 +114,7 @@
 #### From your local machine : 
 bash 
 
-      scp -i pem-linux-key.pem pem-linux-key.pem ubuntu@<jenkins-server-public-ip>:/home/ubuntu
+      scp -i your-key your-key ubuntu@<jenkins-server-public-ip>:/home/ubuntu
 
 
 ### Step 2 : Add Pem Key To Jenkins Credentials 
@@ -124,11 +124,11 @@ bash
 2. #### Fill In : 
    *  **Kind** : SSH Username with private key 
    
-   *  **ID**   : `node-appkey-credentials` 
+   *  **ID**   : `node-app-key-credentials` 
    
    *  **Username** : `Ubuntu`
    
-   *  **private key** : Choose **Enter directly** and paste the contents of `pem-key-server.pem`
+   *  **private key** : Choose **Enter directly** and paste the contents of `key which store on jenkins server`
 
 ![my image](./Images/Screenshot%202025-08-29%20065121.png)
 
@@ -229,13 +229,26 @@ bash
 
 ## Setup Github Hooks 
 
-- Go to github repo -->  **settings** -> **Webhooks** --> **Add Webhooks** --> 
+### Step 1 : Enable Github hook Trigger In Jenkins Job 
 
-- Payload URL :  http://< jenkins-server-ip >:8080/github-webhook/
+1. Open your Jenkins Job --> Configure 
 
-- Content Type : application/x-www-form-urlencoded 
+2. Under Triggers Check : 
+     *  `GitHub hook trigger for GITScm polling`
 
-- Trigger : Just the push event
+![myimage](./Images/Screenshot%202025-08-30%20040337.png)
+
+1. Go to github repo -->  **settings** -> **Webhooks** --> **Add Webhooks** --> 
+
+2. Under Payload URL Enter  :
+
+    * `http://< jenkins-server-ip >:8080/github-webhook/`
+
+3.  Content Type : application/x-www-form-urlencoded 
+
+4. Trigger : Just the push event
+
+![my image](./Images/Screenshot%202025-08-30%20040601.png)
 
 
 ## Summary : 
