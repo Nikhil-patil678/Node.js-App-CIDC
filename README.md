@@ -150,7 +150,7 @@ bash
 
 ![my image](./Images/Screenshot%202025-08-29%20072405.png)
 
-4. Add a jenkinsfile in ypur repo 
+4. Add a jenkinsfile in your repo 
 ---
 ### Jenkinsfile for Remote Deployment
 
